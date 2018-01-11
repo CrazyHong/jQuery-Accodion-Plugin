@@ -1,0 +1,109 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link rel="stylesheet" type="text/css" href="css/test1.css" />
+    <link rel="stylesheet" type="text/css" href="css/test2.css" />
+    <title></title>
+    <style>
+        body {
+            background: #ddd;
+            margin: 0 auto;
+            padding-top: 100px;
+            max-width: 1024px;
+            font: normal 14px/1.2 'Helvetica Neue', 'Arial';
+        }
+
+        .sodetails-collapse {
+            background: #fff;
+            overflow: hidden;
+            border-radius: 3px;
+            -moz-border-radius: 3px;
+            -webkit-border-radius: 3px;
+            margin-bottom: 20px;
+        }
+
+        .sodetails-collapse-title {
+            margin: 0;
+            background-color: rgb(77,81,88);
+            background-image: linear-gradient(bottom, rgb(77,81,88) 14%, rgb(101,106,115) 57%);
+            background-image: -o-linear-gradient(bottom, rgb(77,81,88) 14%, rgb(101,106,115) 57%);
+            background-image: -moz-linear-gradient(bottom, rgb(77,81,88) 14%, rgb(101,106,115) 57%);
+            background-image: -webkit-linear-gradient(bottom, rgb(77,81,88) 14%, rgb(101,106,115) 57%);
+            background-image: -ms-linear-gradient(bottom, rgb(77,81,88) 14%, rgb(101,106,115) 57%);
+        }
+
+            .sodetails-collapse-title a {
+                background: url("images/sprite.png") 15px 13px no-repeat;
+                display: block;
+                padding: 10px;
+                padding-left: 32px;
+                margin: 0;
+                color: #fff;
+                text-decoration: none;
+                font-weight: normal;
+            }
+
+            .sodetails-collapse-title:hover {
+                background: rgb(77,81,88);
+            }
+
+            .sodetails-collapse-title.open {
+                background: rgb(113,119,129);
+            }
+
+                .sodetails-collapse-title.open a {
+                    background-position: 13px -25px;
+                }
+
+            .sodetails-collapse-title + div {
+                padding: 10px;
+            }
+
+            .sodetails-collapse-title + div {
+                display: none;
+            }
+
+        .duplicate {
+            
+            color: black;
+        }
+
+        .duplicate {
+            color: red;
+        }
+    </style>
+    <script src="js/jquery-1.9.1.js"></script>
+    <script src="js/jquery.collapse.js"></script>
+</head>
+
+<body>
+
+    <div class="test">
+        <h1>test</h1>
+    </div>
+    <div class="duplicate">duplicate</div>
+
+    <div class="sodetails-collapse">
+        <div class="sodetails-collapse-title">Hello</div>
+        <div>
+            <p>Hello Sir.</p>
+            <p>I'm sliding</p>
+        </div>
+        <div class="sodetails-collapse-title">Anarachy in the UK</div>
+        <div>I like tea</div>
+        <div class="sodetails-collapse-title">Indeed</div>
+        <div>This is some information</div>
+    </div>
+    <script>
+        new jQueryCollapse($(".sodetails-collapse"), {
+            open: function () {
+                this.slideDown(150);
+            },
+            close: function () {
+                this.slideUp(150);
+            }
+        });
+    </script>
+</body>
+</html>
